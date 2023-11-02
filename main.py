@@ -87,6 +87,7 @@ with st.expander("Decision Tree Classifier"):
 
     class_names = [str(class_name) for class_name in clf.classes_]
     # # Display the graph
+    st.image("resources/DecisionTreeClassifier.png")
     # dot_data = StringIO()
     # export_graphviz(clf, out_file=dot_data, filled=True, rounded=True,
     #                 special_characters=True, feature_names=X.columns, class_names=class_names)
