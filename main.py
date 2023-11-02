@@ -86,15 +86,15 @@ with st.expander("Decision Tree Classifier"):
     clf = clf.fit(X_cat, y)
 
     class_names = [str(class_name) for class_name in clf.classes_]
-    # Display the graph
-    dot_data = StringIO()
-    export_graphviz(clf, out_file=dot_data, filled=True, rounded=True,
-                    special_characters=True, feature_names=X.columns, class_names=class_names)
-    graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
+    # # Display the graph
+    # dot_data = StringIO()
+    # export_graphviz(clf, out_file=dot_data, filled=True, rounded=True,
+    #                 special_characters=True, feature_names=X.columns, class_names=class_names)
+    # graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 
-    # Convert the PyDotPlus image to PNG format
-    png_image = Image.open(BytesIO(graph.create_png()))
-    st.image(png_image, width=1000)
+    # # Convert the PyDotPlus image to PNG format
+    # png_image = Image.open(BytesIO(graph.create_png()))
+    # st.image(png_image, width=1000)
 
     # Accuracy
     y_pred = clf.predict(X_cat)  
